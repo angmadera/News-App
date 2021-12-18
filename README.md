@@ -1,6 +1,7 @@
 # News-App
 
 This app displays current news articles from a wide variety of news sources covering a range of news categories.
+
 ![news1.png](https://github.com/angmadera/images/blob/main/news1.png?raw=true) ![news10.png](https://github.com/angmadera/images/blob/main/news10.png?raw=true)
 
 ## App Highlights
@@ -39,31 +40,30 @@ The NewsAPI.org service offers 2 API calls – one to get news sources (organiza
 ## Application Behavior Diagrams
 ### Startup:
 
-Topics, Countries, and Languages can be selected using the options menu. Note these top-level menus should always be present. The content displayed under each of these menus is dynamic – based upon the data retrieved from the news sources.
+Topics, Countries, and Languages can be selected using the options menu. Note these top-level menus are always be present. The content displayed under each of these menus is dynamic – based upon the data retrieved from the news sources.
 
 A News Source (i.e., “cnn”) can be selected by opening the “drawer” and selecting a source.
 
-A news-related background is shown before any articles are loaded (you find a news related background image for
-yourself)
+A news-related background is shown before any articles are loaded (you find a news related background image for yourself)
 
 ### Selecting Topics, Countries, and Languages:
 
 Note that the content found in the Topics, Countries, and Languages options-menu “submenus” are not hard-coded. Their content comes from the data retrieved from the news sources.
 
-For example, the unique list of all news topics from all sources in this example is business, entertainment, general, health, science, sports, and technology. Those topics are used to populate the “Topics” submenu (with the default  “all” also added to the submenu). Note that the unique set of topics changes over time and should NOT be hard-coded.
-
-The Countries and Languages submenus are populated in the same fashion.
-
 Selecting a Topic, Language or Country will reduce the content of the News Sources drawer-list by eliminating those that do not match the specified Topic, Language or Country criteria.
 
-If the specified criteria result in no News Sources at all, an AlertDialog should be displayed indicating that no sources exist that match the specified Topic, Language and/or Country
+If the specified criteria result in no News Sources at all, an AlertDialog is displayed indicating that no sources exist that match the specified Topic, Language and/or Country
 
 ### Selecting a News Source:
 
 Swipe Right (or Left) to scroll through articles from the selected new source:
 
+![news14.png](https://github.com/angmadera/images/blob/main/news14.png?raw=true)
+
 Click on article title, image, or text to go to extended article on the news source web site:
 
-News Source Data Representation:
+![news15.png](https://github.com/angmadera/images/blob/main/news15.png?raw=true) ![news16.png](https://github.com/angmadera/images/blob/main/news16.png?raw=true) 
 
-The full news source list should always be stored as-is from the API, unchanged (nothing removed). Another “current” list of sources should be used to hold the “current” sources to be displayed in the drawer. This “current” list of sources will change based upon the Topic, Language or Country selections. The list of current sources should contain all sources at startup (as no Topic, Language or Country has yet been selected). When a criteria selection is made (i.e., the “business” topic), the “current” source list should be updated to contain only the sources that have “business” as the topic. If some additional criteria is then selected (i.e., “United Kingdom” selected for the country) the current source list should be updated again to contain only the sources that have “business” as the topic and “United Kingdom” as the country.
+### News Source Data Representation:
+
+The full news source list always is stored as-is from the API, unchanged (nothing removed). Another “current” list of sources is used to hold the “current” sources to be displayed in the drawer. This “current” list of sources is changed based upon the Topic, Language or Country selections. The list of current sources contains all sources at startup (as no Topic, Language or Country has yet been selected). When a criteria selection is made (i.e., the “business” topic), the “current” source list is updated to contain only the sources that have “business” as the topic. If some additional criteria is then selected (i.e., “United Kingdom” selected for the country) the current source list is updated again to contain only the sources that have “business” as the topic and “United Kingdom” as the country.
